@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Container for the table */
+        .table-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Page Title */
+        h4 {
+            font-size: 24px;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        /* Back Button */
+        .btn-back {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .btn-back:hover {
+            background-color: #2980b9;
+        }
+
+        /* Table Styling */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .table th {
+            background-color: #34495e;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #ecf0f1;
+        }
+
+        .table td {
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        /* Action Buttons */
+        .btn-action {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-decoration: none;
+            margin-right: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-edit {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background-color: #229954;
+        }
+
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-delete:hover {
+            background-color: #c0392b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .table-container {
+                padding: 20px;
+            }
+            .table th, .table td {
+                font-size: 13px;
+                padding: 10px;
+            }
+            h4 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="/teacher/option" class="btn-back">Back</a>
+
+    <!-- Page Title -->
+    <h4>All Students</h4>
+
+    <!-- Table of Students -->
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>DBMS</th>
+                    <th>Professional Elective</th>
+                    <th>Open Elective</th>
+                    <th>FLAT</th>
+                    <th>CN</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% students.forEach(student => { %>
+                    <tr>
+                        <td><%= student.roll %></td>
+                        <td><%= student.name %></td>
+                        <td><%= student.dob %></td>
+                        <td><%= student.dbms %></td>
+                        <td><%= student.professional_elective %></td>
+                        <td><%= student.open_elective %></td>
+                        <td><%= student.flat %></td>
+                        <td><%= student.cn %></td>
+                        <td>
+                            <a href="/teacher/edit/<%= student.roll %>" class="btn-action btn-edit">Edit</a>
+                            <form action="/teacher/delete/<%= student.roll %>" method="POST" style="display:inline;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" onclick="return confirm('Are you sure?')" class="btn-action btn-delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

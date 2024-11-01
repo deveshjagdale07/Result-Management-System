@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Government College of Engineering, Jalgaon</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .header .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header .emblem {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1d3557;
+            margin: 0;
+        }
+
+        .header .subtitle {
+            font-size: 14px;
+            color: #333;
+            margin: 5px 0 0 0;
+            font-style: italic;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #1d3557;
+            padding: 15px;
+            display: flex;
+            justify-content: flex-end;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            color: #f1faee;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #a8dadc;
+        }
+
+        /* Main Content Styles */
+        .content {
+            padding: 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+
+        .introduction {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Key Features Section */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+
+        .feature {
+            background-color: #e8f5ff;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            margin: 0 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            font-size: 20px;
+            color: #1d3557;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #333;
+        }
+
+        /* Login Section */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 40px 0;
+        }
+
+        .login-option {
+            text-align: center;
+        }
+
+        .login-option img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #f1faee;
+            color: #e63946;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Notice Board */
+        .notice-board {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .notice-board h3 {
+            font-size: 24px;
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+
+        .notice {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f8f9fa;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            font-size: 24px;
+            color: #1d3557;
+        }
+
+        .contact p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1d3557;
+            color: #f1faee;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header with Logo, Title, and Emblem -->
+<header class="header">
+    <img src="/images/collegelogo.png" alt="College Logo" class="logo">
+    <div>
+        <h1 class="title">Government College of Engineering, Jalgaon</h1>
+        <p class="subtitle">(An Autonomous Institute of Government of Maharashtra)</p>
+    </div>
+    <img src="/images/rajmudralogo.png" alt="Emblem" class="emblem">
+</header>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a class="nav-link" href="/teacher/signup">Teacher Signup</a>
+</nav>
+
+<div class="content">
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <h2 class="section-title">Welcome to the Student Result Management System</h2>
+        <p>Our result management platform is designed to provide students with easy and secure access to their academic results. This initiative is powered by the Government College of Engineering, Jalgaon, with a focus on transparency and convenience.</p>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features">
+        <div class="feature">
+            <h3>Secure Access</h3>
+            <p>Only authorized students and teachers can access the system, ensuring the security of your academic records.</p>
+        </div>
+        <div class="feature">
+            <h3>Real-time Updates</h3>
+            <p>Get the latest updates on results and other academic notifications in real-time.</p>
+        </div>
+        <div class="feature">
+            <h3>Easy Navigation</h3>
+            <p>The user-friendly interface makes it simple for students to view and download their results.</p>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section class="login-container">
+        <div class="login-option">
+            <img src="/images/teacher-icon.png" alt="Teacher Logo">
+            <a href="/teacher/login" class="btn">Teacher Login</a>
+        </div>
+        <div class="login-option">
+            <img src="/images/student-icon.jpg" alt="Student Logo">
+            <a href="/student/login" class="btn">Student Login</a>
+        </div>
+    </section>
+
+    <!-- Notice Board Section -->
+    <section class="notice-board">
+        <h3>Notice Board</h3>
+        <div class="notice">1. Results for the semester exams will be released on 15th Nov.</div>
+        <div class="notice">2. Revaluation forms are now available. Submit by 10th Nov.</div>
+        <div class="notice">3. The next semester starts on 1st Dec. Be prepared!</div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h3>Contact Us</h3>
+        <p>If you have any questions or require assistance, please contact the academic office at (0257) 2258414 or email support@gcoej.ac.in</p>
+    </section>
+    <!-- Footer -->
+<footer class="footer">
+    &copy; 2024 Government College of Engineering, Jalgaon. All rights reserved.
+</footer>
+
+</body>
+</html>

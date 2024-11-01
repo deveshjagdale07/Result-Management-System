@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        /* Back Button */
+        .btn-info {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-info:hover {
+            background-color: #138496;
+        }
+
+        /* Form Styles */
+        .form-label {
+            text-align: left;
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: #1d3557;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #457b9d;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="btn btn-info">Back</a>
+    <div class="container">
+        <h3>Student Login</h3>
+        <form method="POST" class="teachForm">
+            <div class="mb-3">
+                <label for="roll" class="form-label">Roll no :</label>
+                <input type="number" name="roll" class="form-control" id="roll" required>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth :</label>
+                <input type="date" name="dob" class="form-control" id="dob" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

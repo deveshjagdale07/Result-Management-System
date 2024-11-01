@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            background-color: #f4f7f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #4A90E2;
+            margin-bottom: 5px;
+            font-size: 2em;
+            text-transform: capitalize;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin: 10px 0 20px;
+        }
+
+        table {
+            width: 80%;
+            max-width: 600px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            font-size: 1em;
+        }
+
+        th {
+            background-color: #4A90E2;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        strong {
+            font-size: 1.1em;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+        }
+
+        /* Additional styling for real-world feel */
+        .btn-back {
+            background-color: #4A90E2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-back:hover {
+            background-color: #357ABD;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="/" class="btn-back">Back</a> <!-- Changed the button to redirect to homepage -->
+
+    <h1>Welcome, <%= one.name %></h1>
+    <h2>Your Results</h2>
+
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>DBMS</td>
+            <td><%= one.dbms %></td>
+        </tr>
+        <tr>
+            <td>Professional Elective</td>
+            <td><%= one.professional_elective %></td>
+        </tr>
+        <tr>
+            <td>Open Elective</td>
+            <td><%= one.open_elective %></td>
+        </tr>
+        <tr>
+            <td>FLAT</td>
+            <td><%= one.flat %></td>
+        </tr>
+        <tr>
+            <td>CN</td>
+            <td><%= one.cn %></td>
+        </tr>
+        <tr>
+            <td><strong>CGPA</strong></td>
+            <td><strong><%= cgpa %></strong></td>
+        </tr>
+    </table>
+
+    <div class="footer">
+        &copy; 2024 Student Result Management System. All rights reserved.
+    </div>
+</body>
+</html>

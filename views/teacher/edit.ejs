@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student Information</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Form Container Styling */
+        .form-container {
+            background-color: #ffffff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 1em;
+            font-size: 24px;
+        }
+
+        /* Input Field Styling */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+            background-color: #fafafa;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        /* Submit Button Styling */
+        .btn-submit {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .form-container {
+                padding: 1.5em;
+            }
+
+            .form-container h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Edit Student Information</h2>
+        <form action="/teacher/edit/<%= student.roll %>" method="POST">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name" value="<%= student.name %>" required>
+            </div>
+            
+            <!-- Roll Number (readonly) -->
+            <div class="form-group">
+                <label for="roll">Roll Number</label>
+                <input type="text" id="roll" name="roll" placeholder="Roll Number" value="<%= student.roll %>" readonly>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" placeholder="Date of Birth" value="<%= student.dob %>" required>
+            </div>
+            
+            <!-- Subject Marks Fields -->
+            <div class="form-group">
+                <label for="dbms">DBMS Marks</label>
+                <input type="number" step="0.01" id="dbms" name="dbms" placeholder="DBMS Marks" value="<%= student.dbms %>">
+            </div>
+
+            <div class="form-group">
+                <label for="professional_elective">Professional Elective Marks</label>
+                <input type="number" step="0.01" id="professional_elective" name="professional_elective" placeholder="Professional Elective Marks" value="<%= student.professional_elective %>">
+            </div>
+
+            <div class="form-group">
+                <label for="open_elective">Open Elective Marks</label>
+                <input type="number" step="0.01" id="open_elective" name="open_elective" placeholder="Open Elective Marks" value="<%= student.open_elective %>">
+            </div>
+
+            <div class="form-group">
+                <label for="flat">FLAT Marks</label>
+                <input type="number" step="0.01" id="flat" name="flat" placeholder="FLAT Marks" value="<%= student.flat %>">
+            </div>
+
+            <div class="form-group">
+                <label for="cn">CN Marks</label>
+                <input type="number" step="0.01" id="cn" name="cn" placeholder="CN Marks" value="<%= student.cn %>">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Save Changes</button>
+        </form>
+    </div>
+
+</body>
+</html>
