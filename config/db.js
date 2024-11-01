@@ -3,10 +3,11 @@ require('dotenv').config(); // Load environment variables from .env file
 
 // Create a connection to MySQL using environment variables
 const db = mysql.createConnection({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '04082004@DJj',
-  database: process.env.DB_NAME || 'studentresultmanagementDB'
+  host: process.env.DB_HOST ,
+  user: process.env.DB_USER ,
+  password: process.env.DB_PASSWORD ,
+  database: process.env.DB_NAME ,
+  ssl: { rejectUnauthorized: false } // Optional, if Render requires SSL for MySQL
 });
 
 // Connect to the database
