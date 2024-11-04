@@ -1,5 +1,5 @@
-// Importing MySQL connection
-const db = require('../config/db');
+// Importing PostgreSQL connection
+const db = require('../config/db'); // Ensure your db.js is configured for PostgreSQL
 
 // Render the student login page
 const student_login_get = (req, res) => {
@@ -20,24 +20,24 @@ const calculateCGPA = (scores) => {
     return parseFloat(cgpa.toFixed(2)); // Return CGPA rounded to two decimal places
 };
 
-
 // Handle student login (POST)
 const student_login_post = (req, res) => {
     const Sturoll = req.body.roll;
 
-    // Query to find the student by roll number in MySQL
-    db.query('SELECT * FROM students WHERE roll = ?', [Sturoll], (err, results) => {
+    // Query to find the student by roll number in PostgreSQL
+    const query = 'SELECT * FROM students WHERE roll = $1'; // Use $1 as a placeholder for PostgreSQL
+    db.query(query, [Sturoll], (err, results) => {
         if (err) {
             return res.status(500).send("Database error");
         }
 
         // Check if the student was found
-        if (results.length === 0) {
+        if (results.rowCount === 0) {
             return res.render('student/login', { error: 'Login with correct roll number' });
         }
 
         // Extract the individual student from the results
-        const individualStudent = results[0];
+        const individualStudent = results.rows[0]; // Use rows to access data in PostgreSQL
 
         // Calculate CGPA
         const cgpa = calculateCGPA(individualStudent);
