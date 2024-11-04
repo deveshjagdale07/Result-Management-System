@@ -1,4 +1,4 @@
-// Import MySQL connection
+// Import MySQL pool connection
 const db = require('../config/db');
 const bcrypt = require('bcrypt'); // Use bcrypt for password hashing
 
@@ -108,7 +108,6 @@ const teacher_add_get = (req, res) => {
 };
 
 // Add a new student to the database
-// Add a new student to the database
 const teacher_add_post = (req, res) => {
     const { name, roll, dob, dbms, professional_elective, open_elective, flat, cn } = req.body;
 
@@ -140,7 +139,6 @@ const teacher_add_post = (req, res) => {
         });
     });
 };
-
 
 // Render the teacher sign-up page
 const teacher_signup_get = (req, res) => {
